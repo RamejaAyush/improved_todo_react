@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import GetName from "./GetName";
 import "../styles/Nav.css";
 import Todo from "./Todo";
@@ -19,15 +20,16 @@ const Nav = () => {
      </a>
     </div>
    </nav>
-
-   <Switch>
-    <Route exact path="/">
-     <GetName name={name} setName={setName} />
-    </Route>
-    <Route path="/Todo">
-     <Todo name={name} setName={setName} />
-    </Route>
-   </Switch>
+   <AnimatePresence>
+    <Switch>
+     <Route exact path="/">
+      <GetName name={name} setName={setName} />
+     </Route>
+     <Route path="/Todo">
+      <Todo name={name} setName={setName} />
+     </Route>
+    </Switch>
+   </AnimatePresence>
   </Router>
  );
 };

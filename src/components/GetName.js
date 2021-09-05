@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/App.css";
 
 const GetName = ({ name, setName }) => {
@@ -11,7 +11,13 @@ const GetName = ({ name, setName }) => {
  };
 
  return (
-  <div className="name">
+  <motion.div
+   initial={{ opacity: 0 }}
+   animate={{ opacity: 1 }}
+   exit={{ opacity: 0 }}
+   transition={{ duration: 0.75 }}
+   className="name"
+  >
    <div className="form-container">
     <div className="logo">
      <span>{name}'s</span>
@@ -19,7 +25,7 @@ const GetName = ({ name, setName }) => {
     </div>
     <form>
      <h1>Hi There, Enter your Name!</h1>
-     <input type="text" onChange={nameHandler} placeholder={name} />
+     <input type="text" autoFocus onChange={nameHandler} placeholder={name} />
      <Link
       to="/Todo"
       href="#Todo"
@@ -31,7 +37,7 @@ const GetName = ({ name, setName }) => {
      </Link>
     </form>
    </div>
-  </div>
+  </motion.div>
  );
 };
 
