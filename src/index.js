@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import GetName from "./components/GetName";
 
 ReactDOM.render(
  <React.StrictMode>
-  <App />
+  <GetName />
  </React.StrictMode>,
  document.getElementById("root")
 );
