@@ -4,6 +4,7 @@ import "../styles/App.css";
 
 const GetName = ({ name, setName }) => {
  const nameHandler = (e) => {
+  e.preventDefault();
   setName(e.target.value);
   if (e.target.value.length > 15) {
    setName((e.target.value = "Legend"));

@@ -1,5 +1,6 @@
 import "../styles/Todo.css";
 import { motion } from "framer-motion";
+import Form from "./Form";
 
 const Todo = ({ name }) => {
  return (
@@ -14,6 +15,7 @@ const Todo = ({ name }) => {
    <header>
     <h1>Have a Productive Day {name}! :)</h1>
    </header>
+   <Form />
   </motion.div>
  );
 };
