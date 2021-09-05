@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import GetName from "./components/GetName";
+import Nav from "./components/Nav";
 
 ReactDOM.render(
  <React.StrictMode>
-  <GetName />
+  <Nav />
  </React.StrictMode>,
  document.getElementById("root")
 );

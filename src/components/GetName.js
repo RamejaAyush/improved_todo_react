@@ -1,9 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/App.css";
 
-const GetName = () => {
- const [name, setName] = useState("Yours");
-
+const GetName = ({ name, setName }) => {
  const nameHandler = (e) => {
   setName(e.target.value);
   if (e.target.value.length > 15) {
@@ -21,9 +20,15 @@ const GetName = () => {
     <form>
      <h1>Hi There, Enter your Name!</h1>
      <input type="text" onChange={nameHandler} placeholder={name} />
-     <button type="submit" className="continue" maxLength="12">
+     <Link
+      to="/Todo"
+      href="#Todo"
+      type="submit"
+      className="continue"
+      maxLength="12"
+     >
       Continue
-     </button>
+     </Link>
     </form>
    </div>
   </div>
