@@ -13,7 +13,10 @@ const Nav = () => {
     <h1>{name}'s Todo App</h1>
     <div className="navLinks">
      <Link to="/">Configure Todo App</Link>
-     <a href="#asd" className="cat">
+     <a
+      href="https://github.com/RamejaAyush/improved_todo_react"
+      className="cat"
+     >
       Source Code
      </a>
     </div>

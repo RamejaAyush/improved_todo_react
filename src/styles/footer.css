@@ -1,0 +1,15 @@
+footer {
+ width: 100%;
+ height: 10vh;
+ display: grid;
+ place-items: center;
+}
+
+footer p i:hover {
+ color: red;
+ transform: scale(1.2);
+}
+
+footer p a {
+ color: black;
+}
