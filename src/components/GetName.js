@@ -28,7 +28,7 @@ const GetName = ({ name, setName }) => {
      <h1>Hi There, Enter your Name!</h1>
      <input type="text" autoFocus onChange={nameHandler} placeholder={name} />
      <Link
-      to="/Todo"
+      to="/App"
       href="#Todo"
       type="submit"
       className="continue"

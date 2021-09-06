@@ -35,13 +35,6 @@ form .input-sub button {
  cursor: pointer;
 }
 
-form .input-sub input:hover,
-form .input-sub button:hover,
-form .input-sub input:focus,
-form .input-sub button:focus {
- transform: scale(1.05);
-}
-
 form .select select {
  padding: 5px;
  font-size: 18px;

@@ -1,23 +1,17 @@
-import "../styles/Todo.css";
-import { motion } from "framer-motion";
-import Form from "./Form";
+import "../styles/TodoTask.css";
 
-const Todo = ({ name }) => {
+const TodoTask = () => {
  return (
-  <motion.div
-   initial={{ opacity: 0 }}
-   animate={{ opacity: 1 }}
-   exit={{ opacity: 0 }}
-   transition={{ duration: 0.75 }}
-   className="todo"
-   id="Todo"
-  >
-   <header>
-    <h1>Have a Productive Day {name}! :)</h1>
-   </header>
-   <Form />
-  </motion.div>
+  <div className="todo">
+   <p>hola</p>
+   <button className="complete-btn">
+    <i className="fas fa-check"></i>
+   </button>
+   <button className="trash-btn">
+    <i className="fas fa-trash"></i>
+   </button>
+  </div>
  );
 };
 
-export default Todo;
+export default TodoTask;

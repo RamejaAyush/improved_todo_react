@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import GetName from "./GetName";
 import "../styles/Nav.css";
-import Todo from "./Todo";
+import App from "./App";
 
 const Nav = () => {
  const [name, setName] = useState("Your");
@@ -12,9 +12,7 @@ const Nav = () => {
    <nav>
     <h1>{name}'s Todo App</h1>
     <div className="navLinks">
-     <Link to="/" href="#asd">
-      Configure Todo App
-     </Link>
+     <Link to="/">Configure Todo App</Link>
      <a href="#asd" className="cat">
       Source Code
      </a>
@@ -25,8 +23,8 @@ const Nav = () => {
      <Route exact path="/">
       <GetName name={name} setName={setName} />
      </Route>
-     <Route path="/Todo">
-      <Todo name={name} setName={setName} />
+     <Route path="/App">
+      <App name={name} setName={setName} />
      </Route>
     </Switch>
    </AnimatePresence>
