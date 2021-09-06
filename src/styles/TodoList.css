@@ -16,3 +16,8 @@
 
  align-items: center;
 }
+
+.result {
+ margin-top: 25px;
+ opacity: 0.4;
+}

@@ -1,6 +1,7 @@
 import "../styles/Form.css";
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
+ // functions
  const submitHandler = (e) => {
   e.preventDefault();
   setTodos([
@@ -9,9 +10,15 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
   ]);
   setInputText("");
  };
+
  const inputTextHandler = (e) => {
   setInputText(e.target.value);
  };
+
+ const statusHandler = (e) => {
+  setStatus(e.target.value);
+ };
+
  return (
   <div className="formContainer">
    <form>
@@ -28,7 +35,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
      </button>
     </div>
     <div className="select">
-     <select name="todos" className="filter-todo">
+     <select onChange={statusHandler} name="todos" className="filter-todo">
       <option value="all">All</option>
       <option value="completed">Completed</option>
       <option value="uncompleted">Uncompleted</option>

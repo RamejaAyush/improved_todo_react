@@ -9,3 +9,9 @@
  display: grid;
  place-items: center;
 }
+
+.header-line {
+ height: 10vh;
+ display: grid;
+ place-items: center;
+}
