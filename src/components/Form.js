@@ -51,7 +51,12 @@ const Form = ({
       placeholder="Add a Task"
       value={inputText}
      />
-     <button className="todo-button" onClick={submitHandler} type="submit">
+     <button
+      className="todo-button"
+      onClick={submitHandler}
+      disabled={!inputText}
+      type="submit"
+     >
       Add
      </button>
     </div>
