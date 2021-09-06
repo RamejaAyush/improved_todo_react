@@ -59,6 +59,8 @@ const App = ({ name }) => {
     filteredTodos={filteredTodos}
     searchTerm={searchTerm}
     setSearchTerm={setSearchTerm}
+    inputText={inputText}
+    setInputText={setInputText}
    />
    <Footer />
   </motion.div>

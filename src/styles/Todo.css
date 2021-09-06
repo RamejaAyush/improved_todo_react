@@ -15,7 +15,7 @@
 }
 
 .todo-task p {
- width: 80%;
+ width: 70%;
  height: 100%;
  display: flex;
  align-items: center;
@@ -23,12 +23,17 @@
 }
 
 .todo-task button.complete-btn,
-.todo-task button.trash-btn {
+.todo-task button.trash-btn,
+.todo-task button.edit-btn {
  width: 10%;
  height: 100%;
  border: none;
  background-color: white;
  cursor: pointer;
+}
+
+.todo-task button.edit-btn:hover {
+ color: green;
 }
 
 .todo-task button.complete-btn:hover {
@@ -42,4 +47,21 @@
 .completed {
  text-decoration: line-through;
  opacity: 0.5;
+}
+
+.edit-todo {
+ width: 50%;
+ height: 5vh;
+}
+
+.edit-todo input {
+ margin-top: 10px;
+ width: 100%;
+ padding: 8px;
+ outline: none;
+ height: 100%;
+ border: none;
+ background-color: #242424;
+ color: white;
+ transition: all 150ms ease-in-out;
 }

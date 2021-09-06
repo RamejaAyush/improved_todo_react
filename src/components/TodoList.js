@@ -3,11 +3,12 @@ import Todo from "./Todo";
 import { useState, useEffect } from "react";
 
 const TodoList = ({
+ inputText,
+ setInputText,
  todos,
  setTodos,
  filteredTodos,
  searchTerm,
- setSearchTerm,
 }) => {
  const [comp, setComp] = useState({});
  const [unComp, setUnComp] = useState({});
@@ -41,6 +42,8 @@ const TodoList = ({
          setTodos={setTodos}
          text={todo.text}
          key={todo.id}
+         inputText={inputText}
+         setInputText={setInputText}
         />
        );
       })}
