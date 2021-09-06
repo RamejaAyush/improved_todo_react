@@ -10,6 +10,7 @@ const App = ({ name }) => {
  const [todos, setTodos] = useState([]);
  const [status, setStatus] = useState("all");
  const [filteredTodos, setFilterTodos] = useState([]);
+ const [searchTerm, setSearchTerm] = useState("");
 
  // useeffect
  useEffect(() => {
@@ -48,12 +49,16 @@ const App = ({ name }) => {
     todos={todos}
     setTodos={setTodos}
     setStatus={setStatus}
+    searchTerm={searchTerm}
+    setSearchTerm={setSearchTerm}
    />
    <TodoList
     name={name}
     todos={todos}
     setTodos={setTodos}
     filteredTodos={filteredTodos}
+    searchTerm={searchTerm}
+    setSearchTerm={setSearchTerm}
    />
    <Footer />
   </motion.div>

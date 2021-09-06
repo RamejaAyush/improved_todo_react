@@ -2,7 +2,13 @@ import "../styles/TodoList.css";
 import Todo from "./Todo";
 import { useState, useEffect } from "react";
 
-const TodoList = ({ todos, setTodos, filteredTodos }) => {
+const TodoList = ({
+ todos,
+ setTodos,
+ filteredTodos,
+ searchTerm,
+ setSearchTerm,
+}) => {
  const [comp, setComp] = useState({});
  const [unComp, setUnComp] = useState({});
 
@@ -19,17 +25,25 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => {
   <>
    <div className="todo-container">
     <div className="todo-list">
-     {filteredTodos.map((todo) => {
-      return (
-       <Todo
-        todo={todo}
-        todos={todos}
-        setTodos={setTodos}
-        text={todo.text}
-        key={todo.id}
-       />
-      );
-     })}
+     {filteredTodos
+      .filter((todo) => {
+       if (searchTerm === "") {
+        return todo;
+       } else if (todo.text.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return todo;
+       }
+      })
+      .map((todo) => {
+       return (
+        <Todo
+         todo={todo}
+         todos={todos}
+         setTodos={setTodos}
+         text={todo.text}
+         key={todo.id}
+        />
+       );
+      })}
     </div>
     <div className="result">
      <h1>

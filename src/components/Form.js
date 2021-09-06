@@ -1,6 +1,14 @@
 import "../styles/Form.css";
 
-const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
+const Form = ({
+ inputText,
+ setInputText,
+ todos,
+ setTodos,
+ setStatus,
+ setSearchTerm,
+ searchTerm,
+}) => {
  // functions
  const submitHandler = (e) => {
   e.preventDefault();
@@ -18,9 +26,21 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
  const statusHandler = (e) => {
   setStatus(e.target.value);
  };
+ const searchHandler = (e) => {
+  setSearchTerm(e.target.value);
+  console.log(searchTerm);
+ };
 
  return (
   <div className="formContainer">
+   <div className="search-cont">
+    <input
+     type="text"
+     placeholder="Search Your Task..."
+     onChange={searchHandler}
+     className="search"
+    />
+   </div>
    <form>
     <div className="input-sub">
      <input
