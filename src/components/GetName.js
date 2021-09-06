@@ -4,11 +4,14 @@ import "../styles/App.css";
 
 const GetName = ({ name, setName }) => {
  const nameHandler = (e) => {
-  e.preventDefault();
   setName(e.target.value);
   if (e.target.value.length > 15) {
    setName((e.target.value = "Legend"));
   }
+ };
+
+ const preventDefault = (e) => {
+  e.preventDefault();
  };
 
  return (
@@ -24,16 +27,10 @@ const GetName = ({ name, setName }) => {
      <span>{name}'s</span>
      <p>Todo App</p>
     </div>
-    <form>
+    <form onChange={preventDefault}>
      <h1>Hi There, Enter your Name!</h1>
      <input type="text" autoFocus onChange={nameHandler} placeholder={name} />
-     <Link
-      to="/App"
-      href="#Todo"
-      type="submit"
-      className="continue"
-      maxLength="12"
-     >
+     <Link to="/App" href="#Todo" className="continue" maxLength="12">
       Continue
      </Link>
     </form>

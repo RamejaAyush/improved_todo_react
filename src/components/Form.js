@@ -26,6 +26,7 @@ const Form = ({
  const statusHandler = (e) => {
   setStatus(e.target.value);
  };
+
  const searchHandler = (e) => {
   setSearchTerm(e.target.value);
   console.log(searchTerm);
