@@ -19,7 +19,7 @@ const GetName = ({ name, setName }) => {
    transition={{ duration: 0.75 }}
    className="name"
   >
-   <div className="form-container">
+   <div className="name-container">
     <div className="logo">
      <span>{name}'s</span>
      <p>Todo App</p>

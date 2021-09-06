@@ -1,15 +1,34 @@
-import "../styles/TodoTask.css";
+import "../styles/Todo.css";
 
-const TodoTask = () => {
+const TodoTask = ({ text, todo, todos, setTodos }) => {
+ const completeHandler = () => {
+  setTodos(
+   todos.map((item) => {
+    if (item.id === todo.id) {
+     return {
+      ...item,
+      completed: !item.completed,
+     };
+    }
+    return item;
+   })
+  );
+ };
+
+ const deleteHandler = () => {
+  setTodos(todos.filter((item) => item.id !== todo.id));
+ };
  return (
   <div className="todo">
-   <p>hola</p>
-   <button className="complete-btn">
-    <i className="fas fa-check"></i>
-   </button>
-   <button className="trash-btn">
-    <i className="fas fa-trash"></i>
-   </button>
+   <div className="todo-task">
+    <p className={`${todo.completed ? "completed" : ""}`}>{text}</p>
+    <button className="complete-btn" onClick={completeHandler}>
+     <i className="fas fa-check"></i>
+    </button>
+    <button className="trash-btn" onClick={deleteHandler}>
+     <i className="fas fa-trash"></i>
+    </button>
+   </div>
   </div>
  );
 };

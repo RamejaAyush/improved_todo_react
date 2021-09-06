@@ -1,12 +1,29 @@
-import "../styles/Todo.css";
-import { useState } from "react";
+import "../styles/MainApp.css";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Form from "./Form";
-// import TodoTask from "./Todo";
+import TodoList from "./TodoList";
 
-const App = ({ name }) => {
- const [inputName, setInputName] = useState("Task");
+const App = () => {
+ const [inputText, setInputText] = useState("");
  const [todos, setTodos] = useState([]);
+ const [status, setStatus] = useState("all");
+ const [filteredTodos, setFilterTodos] = useState([]);
+
+ useEffect(() => {
+  switch (status) {
+   case "completed":
+    setFilterTodos(todos.filter((todo) => todo.completed === true));
+    break;
+   case "uncomplted":
+    setFilterTodos(todos.filter((todo) => todo.completed === false));
+    break;
+   default:
+    setFilterTodos(todos);
+    break;
+  }
+ }, [status, todos]);
+
  return (
   <motion.div
    initial={{ opacity: 0 }}
@@ -16,15 +33,14 @@ const App = ({ name }) => {
    className="todo"
    id="Todo"
   >
-   <header>
-    <h1>Have a Productive Day {name}! :)</h1>
-   </header>
    <Form
-    inputName={inputName}
-    setInputName={setInputName}
+    inputText={inputText}
+    setInputText={setInputText}
     todos={todos}
     setTodos={setTodos}
+    setStatus={setStatus}
    />
+   <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
   </motion.div>
  );
 };

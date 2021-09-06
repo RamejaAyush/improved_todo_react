@@ -26,7 +26,7 @@ span {
  justify-content: center;
 }
 
-.form-container {
+.name-container {
  width: 30vw;
  height: 60vh;
  background-color: white;
@@ -35,11 +35,11 @@ span {
  transition: all 0.5s ease-in-out;
 }
 
-.form-container:hover {
+.name-container:hover {
  box-shadow: 5px 5px 10px 5px rgba(119, 119, 119, 0.363);
 }
 
-.form-container .logo {
+.name-container .logo {
  width: 100%;
  height: 40%;
  display: flex;
@@ -49,16 +49,16 @@ span {
  gap: 15px;
 }
 
-.form-container .logo span {
+.name-container .logo span {
  font-size: 45px;
 }
 
-.form-container .logo p {
+.name-container .logo p {
  font-size: 25px;
  font-weight: 700;
 }
 
-.form-container form {
+.name-container form {
  width: 100%;
  height: 60%;
  display: flex;
@@ -68,11 +68,11 @@ span {
  flex-direction: column;
 }
 
-.form-container form h1 {
+.name-container form h1 {
  font-size: 25px;
 }
 
-.form-container form input {
+.name-container form input {
  padding: 5px;
  font-size: 20px;
  background-color: transparent;
@@ -83,7 +83,7 @@ span {
  font-family: "Ubuntu", sans-serif;
 }
 
-.form-container form a {
+.name-container form a {
  padding: 10px;
  font-size: 15px;
  border: 1px solid black;
@@ -96,7 +96,7 @@ span {
  text-decoration: none;
 }
 
-.form-container form a:hover,
-.form-container form a:focus {
+.name-container form a:hover,
+.name-container form a:focus {
  transform: scale(1.1);
 }
